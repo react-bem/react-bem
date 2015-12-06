@@ -1,9 +1,10 @@
-var createClass = require('../lib/createClass'),
-    ReactElement = require('react/lib/ReactElement');
+var createClass = require('../lib/createClass');
 
 describe('createClass', function() {
     it('should return constructor', function() {
-        expect(typeof createClass({ render : function() {}})).toBe('function');
+        expect(typeof createClass({
+            render: function() {}
+        })).toBe('function');
     });
 
     it('should throw error if "render" method isn\'t specified', function() {
