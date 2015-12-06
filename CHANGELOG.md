@@ -1,4 +1,4 @@
 Changelog
 =========
 
-See [releases](https://github.com/dfilatov/bem-react/releases).
+See [releases](https://github.com/react-bem/react-bem/releases).

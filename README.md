@@ -1,6 +1,6 @@
-# bem-react [![NPM version](https://badge.fury.io/js/bem-react.png)](http://badge.fury.io/js/bem-react) [![Build Status](https://travis-ci.org/dfilatov/bem-react.svg?branch=master)](https://travis-ci.org/dfilatov/bem-react)
+# react-bem [![NPM version](https://badge.fury.io/js/react-bem.svg)](https://badge.fury.io/js/react-bem) [![Build Status](https://travis-ci.org/react-bem/react-bem.svg?branch=master)](https://travis-ci.org/react-bem/react-bem)
 
-`bem-react` is a module on top of [React](https://github.com/facebook/react/) which joins awesome React with some good BEM-specific features.
+`react-bem` is a module on top of [React](https://github.com/facebook/react/) which joins awesome React with some good BEM-specific features.
 
 Its main goals:
   * provide ability to use some kind of bemjson in templates and during usage (instead of ugly jsx or plain js)
@@ -9,16 +9,16 @@ Its main goals:
 ## Getting Started
 
 ### Installation
-via npm: `npm install bem-react`
+via npm: `npm install react-bem`
 
-via bower: `bower install bem-react`
+via bower: `bower install react-bem`
 
 ## Building a component
 BemReact's component is the same as React's one except you should return bemjson from `render` method.
 
 Example:
 ```js
-var BemReact = require('bem-react');
+var BemReact = require('react-bem');
 
 var Button = BemReact.createClass({
     getInitialState : function() {
