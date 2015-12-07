@@ -1,7 +1,7 @@
 {
-  "name": "bem-react",
+  "name": "react-bem",
   "version": "0.0.10",
-  "homepage": "https://github.com/dfilatov/bem-react",
+  "homepage": "https://github.com/react-bem/react-bem",
   "authors": [
     "Dmitry Filatov <dfilatov@yandex-team.ru>"
   ],
