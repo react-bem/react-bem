@@ -15,11 +15,14 @@
   },
   "devDependencies": {
     "browserify": "6.3.3",
-    "react": "0.13.x",
-    "jasmine": "2.1.0"
+    "eslint": "^1.10.3",
+    "eslint-config-yandex": "^1.0.5",
+    "jasmine": "2.1.0",
+    "react": "0.13.x"
   },
   "license": "MIT",
   "scripts": {
+    "pretest": "eslint .",
     "test": "jasmine",
     "build-example": "browserify example/index.js > example/index.build.js"
   }
