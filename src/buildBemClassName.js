@@ -1,9 +1,9 @@
 /* eslint-disable no-cond-assign */
 
-var MOD_DELIM = '_',
+const MOD_DELIM = '_',
     ELEM_DELIM = '__';
 
-module.exports = function buildBemClassName(block, elem, mods, mix) {
+export default function buildBemClassName(block, elem, mods, mix) {
     if(typeof elem !== 'string') {
         mix = mods;
         mods = elem;
@@ -33,4 +33,4 @@ module.exports = function buildBemClassName(block, elem, mods, mix) {
     }
 
     return res;
-};
+}

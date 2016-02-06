@@ -1,4 +1,4 @@
-var buildBemClassName = require('../lib/buildBemClassName');
+import buildBemClassName from '../src/buildBemClassName';
 
 describe('buildBemClassName', function() {
     it('should build block class name', function() {

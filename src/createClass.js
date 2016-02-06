@@ -1,8 +1,8 @@
-var react = require('react'),
-    buildBemClassName = require('./buildBemClassName'),
-    bemJsonToReact = require('./bemJsonToReact');
+import {createElement, createClass} from 'react';
+import buildBemClassName from './buildBemClassName';
+import bemJsonToReact from './bemJsonToReact';
 
-module.exports = function(spec) {
+export default function(spec) {
     var origRender = spec.render;
 
 //    "No `render` method …" warn will be shown by ReactCompositeComponentMixin.mountComponent
@@ -25,7 +25,7 @@ module.exports = function(spec) {
             (json.props || (json.props = {}))
                 .className = buildBemClassName(json.block, json.mods, this.props.mix);
 
-            return react.createElement(
+            return createElement(
                 json.tag || 'div',
                 json.props,
                 bemJsonToReact(json.content, json.block, this));
@@ -36,5 +36,5 @@ module.exports = function(spec) {
         return this.props.__parent;
     };
 
-    return react.createClass(spec);
-};
+    return createClass(spec);
+}

@@ -1,11 +1,11 @@
-var bemReact = require('../lib/bemReact'),
-    React = require('react'),
-    ReactDOMServer = require('react-dom/server');
+import ReactBEM from '../src/';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 
 describe('render', function() {
 
     it('should accept element from bem component json', function() {
-        var Block = bemReact.createClass({
+        var Block = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'test',
@@ -29,7 +29,7 @@ describe('render', function() {
             }
         });
 
-        var BEMComponent = bemReact.createClass({
+        var BEMComponent = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'test',
@@ -48,7 +48,7 @@ describe('render', function() {
     });
 
     it('should accept nested bem-json components', function() {
-        var BEMComponent1 = bemReact.createClass({
+        var BEMComponent1 = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'link',
@@ -61,7 +61,7 @@ describe('render', function() {
             }
         });
 
-        var BEMComponent2 = bemReact.createClass({
+        var BEMComponent2 = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'test',
@@ -80,7 +80,7 @@ describe('render', function() {
     });
 
     it('should throw error if block isn\'t specified in input', function() {
-        var InvalidComponent = bemReact.createClass({
+        var InvalidComponent = ReactBEM.createClass({
             render: function() {
                 return {
                     foo: 'bat'
