@@ -1,4 +1,6 @@
-var bemReact = require('../lib/bemReact');
+var bemReact = require('../lib/bemReact'),
+    React = require('react'),
+    ReactDOMServer = require('react-dom/server');
 
 describe('tag', function() {
     it('for block should be <div/> by default', function() {
@@ -10,8 +12,9 @@ describe('tag', function() {
             }
         });
 
-        expect(bemReact.renderToStaticMarkup({block: Block}))
-            .toBe('<div class="test"></div>');
+        expect(
+            ReactDOMServer.renderToStaticMarkup(React.createElement(Block))
+        ).toBe('<div class="test"></div>');
     });
 
     it('should use "tag" field', function() {
@@ -24,7 +27,8 @@ describe('tag', function() {
             }
         });
 
-        expect(bemReact.renderToStaticMarkup({block: Block}))
-            .toBe('<span class="test"></span>');
+        expect(
+            ReactDOMServer.renderToStaticMarkup(React.createElement(Block))
+        ).toBe('<span class="test"></span>');
     });
 });

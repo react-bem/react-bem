@@ -11,16 +11,14 @@ Its main goals:
 ### Installation
 via npm: `npm install react-bem`
 
-via bower: `bower install react-bem`
-
 ## Building a component
 BemReact's component is the same as React's one except you should return bemjson from `render` method.
 
 Example:
 ```js
-var BemReact = require('react-bem');
+var ReactBEM = require('react-bem');
 
-var Button = BemReact.createClass({
+var Button = ReactBEM.createClass({
     getInitialState : function() {
         return {
             focused : this.props.focused
@@ -57,12 +55,27 @@ var Button = BemReact.createClass({
 ```
 
 ## Using a component
+For rendering component in DOM environment you need [react-bem-dom](https://github.com/react-bem/react-bem-dom) helper
 ```js
-BemReact.render(
-    { block : Button, props : { size : 'xl', disabled : true, text : 'click me' } },
+ReactBEMDOM.render(
+    {
+        block : Button,
+        props : {
+            size : 'xl',
+            disabled : true,
+            text : 'click me'
+        }
+    },
     document.body);
-// inserts to body following html:
-// <button class="button button_size_xl button_disabled">click me</button>
+```
+inserts to body following html
+```html
+<button class="button button_size_xl button_disabled">click me</button>
+```
+
+#### In react-native
+```js
+AppRegistry.registerComponent('ButtonProject', () => Button);
 ```
 
 ### Composition of components
@@ -135,10 +148,6 @@ API is the similar to the original React's API:
 
 #### createClass(*Object* specification)
 
-#### render(*Object* componentJson, *DOMElement* container, [*Function* callback])
+## DOM-specific methods
 
-#### renderToString(*Object* componentJson)
-
-#### renderToStaticMarkup(*Object* componentJson)
-
-#### unmountComponentAtNode(*DOMElement* container)
+available in [react-bem-dom](https://github.com/react-bem/react-bem-dom)
