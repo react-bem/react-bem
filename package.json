@@ -11,19 +11,21 @@
   "main": "lib/bemReact.js",
   "author": "Dmitry Filatov <dfilatov@yandex-team.ru>",
   "peerDependencies": {
-    "react": "0.13.x"
+    "react": "0.14.x"
   },
   "devDependencies": {
-    "browserify": "6.3.3",
+    "browserify": "^13.0.0",
     "eslint": "^1.10.3",
     "eslint-config-yandex": "^1.0.5",
-    "jasmine": "2.1.0",
-    "react": "0.13.x"
+    "jasmine": "^2.4.1",
+    "react": "0.14.x",
+    "react-dom": "^0.14.0"
   },
   "license": "MIT",
   "scripts": {
     "pretest": "eslint .",
     "test": "jasmine",
     "build-example": "browserify example/index.js > example/index.build.js"
-  }
+  },
+  "repository": "react-bem/react-bem"
 }
