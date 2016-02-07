@@ -21,4 +21,21 @@ describe('createClass', function() {
             ));
         }).toThrowError(/Class specification must implement a `render` method/);
     });
+
+    it('should throw error if block isn\'t specified in input', function() {
+        var InvalidComponent = ReactBEM.createClass({
+            render: function() {
+                return {
+                    foo: 'bat'
+                };
+            }
+        });
+
+        expect(function() {
+            ReactDOMServer.renderToStaticMarkup(React.createElement(
+                InvalidComponent,
+                {}
+            ));
+        }).toThrowError('render: block should be specified in returned bemjson');
+    });
 });
