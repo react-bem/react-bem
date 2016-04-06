@@ -4,9 +4,11 @@ import ReactDOMServer from 'react-dom/server';
 
 describe('Component', function() {
     it('should extends React.Component', function() {
-        const instance = new class extends ReactBEM.Component {
-                render() {}
-            },
+        class MyComponent extends ReactBEM.Component {
+            render() {}
+        }
+
+        const instance = new MyComponent(),
             instanceProto = Object.getPrototypeOf(instance);
 
         expect(Object.getPrototypeOf(Object.getPrototypeOf(instanceProto)).constructor).toBe(React.Component);
