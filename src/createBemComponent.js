@@ -1,6 +1,6 @@
-var react = require('react');
+import {createElement} from 'react';
 
-module.exports = function(json, parent) {
+export default function(json, parent) {
     if(!json || !json.block) {
         throw Error('render: invalid bem component json');
     }
@@ -13,5 +13,5 @@ module.exports = function(json, parent) {
     json.props || (json.props = {});
     json.props.__parent || (json.props.__parent = parent);
 
-    return react.createElement(json.block, json.props);
-};
+    return createElement(json.block, json.props);
+}

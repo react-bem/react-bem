@@ -1,10 +1,10 @@
-var bemReact = require('../lib/bemReact'),
-    React = require('react'),
-    ReactDOMServer = require('react-dom/server');
+import ReactBEM from '../src/';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 
 describe('tag', function() {
     it('for block should be <div/> by default', function() {
-        var Block = bemReact.createClass({
+        var Block = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'test'
@@ -18,7 +18,7 @@ describe('tag', function() {
     });
 
     it('should use "tag" field', function() {
-        var Block = bemReact.createClass({
+        var Block = ReactBEM.createClass({
             render: function() {
                 return {
                     block: 'test',

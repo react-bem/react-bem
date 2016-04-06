@@ -8,23 +8,30 @@
     "json",
     "bemjson"
   ],
-  "main": "lib/bemReact.js",
+  "main": "lib/index.js",
   "author": "Dmitry Filatov <dfilatov@yandex-team.ru>",
   "peerDependencies": {
     "react": "0.14.x"
   },
   "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babel-register": "^6.4.3",
     "browserify": "^13.0.0",
     "eslint": "^1.10.3",
     "eslint-config-yandex": "^1.0.5",
     "jasmine": "^2.4.1",
     "react": "0.14.x",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "rimraf": "^2.5.1"
   },
   "license": "MIT",
   "scripts": {
     "pretest": "eslint .",
     "test": "jasmine",
+    "preversion": "npm run build",
+    "build": "rimraf lib && babel ./src -d lib",
     "build-example": "browserify example/index.js > example/index.build.js"
   },
   "repository": "react-bem/react-bem"

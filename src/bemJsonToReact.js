@@ -1,8 +1,8 @@
-var react = require('react'),
-    buildBemClassName = require('./buildBemClassName'),
-    createBemComponent = require('./createBemComponent');
+import {createElement} from 'react';
+import buildBemClassName from './buildBemClassName';
+import createBemComponent from './createBemComponent';
 
-module.exports = function bemJsonToReact(json, curBlock, parent) {
+export default function bemJsonToReact(json, curBlock, parent) {
     if(json) {
         if(Array.isArray(json)) {
             return json.map(function(item) {
@@ -14,7 +14,7 @@ module.exports = function bemJsonToReact(json, curBlock, parent) {
             (json.props || (json.props = {}))
                 .className = buildBemClassName(json.block || curBlock, json.elem, json.mods, json.mix);
 
-            return react.createElement(
+            return createElement(
                 json.tag || 'div',
                 json.props,
                 bemJsonToReact(json.content, curBlock, parent));
@@ -26,4 +26,4 @@ module.exports = function bemJsonToReact(json, curBlock, parent) {
     }
 
     return json;
-};
+}
